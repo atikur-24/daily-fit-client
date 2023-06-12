@@ -1,4 +1,3 @@
-
 import { HiMinus } from "react-icons/hi";
 
 const SectionTitle = ( { heading, subHeading } ) => {
