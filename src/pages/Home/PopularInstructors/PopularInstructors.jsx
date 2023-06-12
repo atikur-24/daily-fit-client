@@ -20,7 +20,7 @@ const PopularInstructors = () => {
         <section className="my-container">
             <SectionTitle heading="Popular Instructors" subHeading="Train With Experts" />
             {loading && <Spinner />}
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-5 mt-6 lg:mt-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-5 mt-6 lg:mt-12">
                 {
                     instructors.map(instructor => <PopularInstructorsCard key={instructor._id} instructor={instructor} /> )
                 }

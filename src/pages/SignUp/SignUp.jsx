@@ -19,6 +19,16 @@ const SignUp = () => {
         signUp(data.email, data.password)
          .then(() => {
             updateUserProfile(data.name, data.photoURL)
+            const saveUser = { email: data.email, name: data.name, img: data.photoURL, role: 'student' };
+            fetch('http://localhost:5000/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(saveUser)
+            })
+            .then(res => res.json())
+            .then(() => {})
             Swal.fire({
                 position: 'top-end',
                 icon: 'success',
@@ -26,8 +36,8 @@ const SignUp = () => {
                 showConfirmButton: false,
                 timer: 1500
               })
-            reset();
-            navigate('/');
+              reset();
+              navigate('/');
          })
          .catch(error => console.error(error.message))
     };
