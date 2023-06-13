@@ -1,21 +1,28 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../layouts/Main";
 import Home from "../pages/Home/Home/Home";
-// import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Login from "../pages/login/login";
 import SignUp from "../pages/SignUp/SignUp";
 import Dashboard from "../layouts/Dashboard";
-import ManageUser from "../pages/Dashboard/ManageUsers/ManageUser";
+import ManageUser from "../pages/Dashboard/Admin/ManageUsers/ManageUser";
+import Classes from "../pages/Classes/Classes";
+import SelectedClass from "../pages/Dashboard/Student/SelectedClass/selectedClass";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import PrivateRoute from "./PrivateRoute";
 
 const routers = createBrowserRouter([
     {
         path: '/',
         element: <Main />,
-        // errorElement: <ErrorPage />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: '/',
                 element: <Home />
+            },
+            {
+                path: 'classes',
+                element: <Classes />
             },
             {
                 path: 'login',
@@ -29,8 +36,17 @@ const routers = createBrowserRouter([
     },
     {
         path: 'dashboard',
-        element: <Dashboard />,
+        element: <PrivateRoute> <Dashboard /> </PrivateRoute>,
+        errorElement: <ErrorPage />,
         children: [
+            {
+                path: 'selectedClasses',
+                element: <SelectedClass />
+            },
+            // {
+            //     path: 'adminHome',
+            //     element: <DashboardHome />
+            // },
             {
                 path: 'manageUsers',
                 element: <ManageUser />

@@ -13,7 +13,7 @@ const Navbar = () => {
     <li><NavLink className={({ isActive }) => (isActive ? "active" : "default")} to='/'>Home</NavLink></li>
     <li><NavLink className={({ isActive }) => (isActive ? "active" : "default")} to='/classes'>Classes</NavLink></li>
     <li><NavLink className={({ isActive }) => (isActive ? "active" : "default")} to='/instructors'>Instructors</NavLink></li>
-    {user && <li><NavLink className={({ isActive }) => (isActive ? "active" : "default")} to='dashboard'>Dashboard </NavLink></li>}
+    {user && <li><NavLink className={({ isActive }) => (isActive ? "active" : "default")} to='/dashboard/selectedClasses'>Dashboard </NavLink></li>}
     </>
   return (
     <div className="navbar z-10 fixed text-white lg:mt-4 lg:ml-20">

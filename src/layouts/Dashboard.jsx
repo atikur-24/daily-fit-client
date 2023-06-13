@@ -1,13 +1,10 @@
 import { NavLink, Outlet } from "react-router-dom";
-// import useAuth from "../hooks/useAuth";
 import { HiBadgeCheck, HiBookmark, HiClipboardList, HiFolderAdd, HiFolderOpen, HiHome, HiUserGroup } from "react-icons/hi";
+import useAdmin from "../hooks/useAdmin";
 
 
 const Dashboard = () => {
-    // const { user } = useAuth();
-    const user = false;
-    const isAdmin = true;
-    const isInstructor = false;
+    const [isAdmin] = useAdmin();
 
     return (
         <div>
@@ -24,7 +21,21 @@ const Dashboard = () => {
                     <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
                     {/* Sidebar content here */}
 
-                        { isAdmin && <>
+                    {
+                        isAdmin ?
+                        <>
+                        <li><NavLink to='/dashboard/adminHome'><HiHome /> Admin Home</NavLink></li>
+                        <li><NavLink to='/dashboard/manageClasses'><HiClipboardList /> Manage Classes</NavLink></li>
+                        <li><NavLink to='/dashboard/manageUsers'><HiUserGroup /> Manage Users</NavLink></li>
+                        </> :
+
+                        <>
+                        <li><NavLink to='/dashboard/studentHome'><HiHome /> Student Home</NavLink></li>
+                        <li><NavLink to='/dashboard/userHome'><HiBookmark/> My Selected Classes</NavLink></li>
+                        <li><NavLink to='/dashboard/reservation'><HiBadgeCheck /> My Enrolled Classes</NavLink></li>
+                        </>
+                    }
+                        {/* { isAdmin && <>
                         <li><NavLink to='/dashboard/adminHome'><HiHome /> Admin Home</NavLink></li>
                         <li><NavLink to='/dashboard/manageClasses'><HiClipboardList /> Manage Classes</NavLink></li>
                         <li><NavLink to='/dashboard/manageUsers'><HiUserGroup /> Manage Users</NavLink></li>
@@ -32,15 +43,14 @@ const Dashboard = () => {
 
                         { isInstructor && <>
                         <li><NavLink to='/dashboard/instructorHome'><HiHome />Instructor Home</NavLink></li>
-                        <li><NavLink to='/dashboard/userHome'><HiFolderAdd/> Add Class</NavLink></li>
-                        <li><NavLink to='/dashboard/reservation'><HiFolderOpen /> My Classes</NavLink></li>
+                        <li><NavLink to='/dashboard/selectedClasses'><HiFolderAdd/> Add Class</NavLink></li>
+                        <li><NavLink to='/dashboard/enrolledClasses'><HiFolderOpen /> My Classes</NavLink></li>
                         </> }
 
-                        { user && <>
                         <li><NavLink to='/dashboard/studentHome'><HiHome /> Student Home</NavLink></li>
                         <li><NavLink to='/dashboard/userHome'><HiBookmark/> My Selected Classes</NavLink></li>
-                        <li><NavLink to='/dashboard/reservation'><HiBadgeCheck /> My Enrolled Classes</NavLink></li>
-                        </>}
+                        <li><NavLink to='/dashboard/reservation'><HiBadgeCheck /> My Enrolled Classes</NavLink></li> */}
+
                         <div className="divider"></div>       
                         <li><NavLink to='/' ><HiHome /> Home</NavLink></li>
                     </ul>
