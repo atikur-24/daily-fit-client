@@ -3,12 +3,16 @@ import useAuth from "../../hooks/useAuth";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import useAdmin from "../../hooks/useAdmin";
+import useInstructor from "../../hooks/useInstructor";
 
 const ClassesCard = ({ item }) => {
     const { _id, name, img, price, instructor_name, available_seats } = item;
     const { user } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
 
     const handleAddToCart = () => {
         if(user) {
@@ -54,7 +58,7 @@ const ClassesCard = ({ item }) => {
             </div>
             <div className="card-actions justify-between items-center">
                 <p className="text-xl text-[#f34e3a]">${price}</p>
-                <button onClick={ handleAddToCart } disabled={available_seats <= 0 } className="btn btn-primary">select</button>
+                <button onClick={ handleAddToCart } disabled={ isAdmin || isInstructor || available_seats <= 0 } className="btn btn-primary">select</button>
                 <ToastContainer />
             </div>
         </div>

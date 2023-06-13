@@ -9,6 +9,7 @@ import Classes from "../pages/Classes/Classes";
 import SelectedClass from "../pages/Dashboard/Student/SelectedClass/selectedClass";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import PrivateRoute from "./PrivateRoute";
+import Instructors from "../pages/Instructors/Instructor";
 
 const routers = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const routers = createBrowserRouter([
             {
                 path: 'classes',
                 element: <Classes />
+            },
+            {
+                path: 'instructors',
+                element: <Instructors />
             },
             {
                 path: 'login',

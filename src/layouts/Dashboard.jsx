@@ -1,10 +1,12 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { HiBadgeCheck, HiBookmark, HiClipboardList, HiFolderAdd, HiFolderOpen, HiHome, HiUserGroup } from "react-icons/hi";
 import useAdmin from "../hooks/useAdmin";
+import useInstructor from "../hooks/useInstructor";
 
 
 const Dashboard = () => {
-    const [isAdmin] = useAdmin();
+    const [ isAdmin ] = useAdmin();
+    const [ isInstructor ] = useInstructor();
 
     return (
         <div>
@@ -21,35 +23,28 @@ const Dashboard = () => {
                     <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
                     {/* Sidebar content here */}
 
-                    {
-                        isAdmin ?
+                    { isAdmin &&
                         <>
                         <li><NavLink to='/dashboard/adminHome'><HiHome /> Admin Home</NavLink></li>
                         <li><NavLink to='/dashboard/manageClasses'><HiClipboardList /> Manage Classes</NavLink></li>
                         <li><NavLink to='/dashboard/manageUsers'><HiUserGroup /> Manage Users</NavLink></li>
-                        </> :
-
+                        </>
+                    }
+                    { isInstructor &&
+                        <>
+                        <li><NavLink to='/dashboard/instructorHome'><HiHome />Instructor Home</NavLink></li>
+                        <li><NavLink to='/dashboard/selectedClasses'><HiFolderAdd/> Add Class</NavLink></li>
+                        <li><NavLink to='/dashboard/enrolledClasses'><HiFolderOpen /> My Classes</NavLink></li>
+                        </>
+                    }
+                        
+                    { !isAdmin && !isInstructor && 
                         <>
                         <li><NavLink to='/dashboard/studentHome'><HiHome /> Student Home</NavLink></li>
                         <li><NavLink to='/dashboard/userHome'><HiBookmark/> My Selected Classes</NavLink></li>
                         <li><NavLink to='/dashboard/reservation'><HiBadgeCheck /> My Enrolled Classes</NavLink></li>
                         </>
                     }
-                        {/* { isAdmin && <>
-                        <li><NavLink to='/dashboard/adminHome'><HiHome /> Admin Home</NavLink></li>
-                        <li><NavLink to='/dashboard/manageClasses'><HiClipboardList /> Manage Classes</NavLink></li>
-                        <li><NavLink to='/dashboard/manageUsers'><HiUserGroup /> Manage Users</NavLink></li>
-                        </> }
-
-                        { isInstructor && <>
-                        <li><NavLink to='/dashboard/instructorHome'><HiHome />Instructor Home</NavLink></li>
-                        <li><NavLink to='/dashboard/selectedClasses'><HiFolderAdd/> Add Class</NavLink></li>
-                        <li><NavLink to='/dashboard/enrolledClasses'><HiFolderOpen /> My Classes</NavLink></li>
-                        </> }
-
-                        <li><NavLink to='/dashboard/studentHome'><HiHome /> Student Home</NavLink></li>
-                        <li><NavLink to='/dashboard/userHome'><HiBookmark/> My Selected Classes</NavLink></li>
-                        <li><NavLink to='/dashboard/reservation'><HiBadgeCheck /> My Enrolled Classes</NavLink></li> */}
 
                         <div className="divider"></div>       
                         <li><NavLink to='/' ><HiHome /> Home</NavLink></li>

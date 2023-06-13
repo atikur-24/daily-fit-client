@@ -8,10 +8,10 @@ const PopularInstructors = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect( () => {
-        fetch('http://localhost:5000/instructors')
+        fetch('http://localhost:5000/users/instructor')
          .then(res => res.json())
          .then(data => {
-            setInstructors(data)
+            setInstructors(data.slice(0, 6))
             setLoading(false)
         })
     }, [])
