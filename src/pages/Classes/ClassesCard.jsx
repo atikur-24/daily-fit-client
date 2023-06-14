@@ -7,7 +7,7 @@ import useAdmin from "../../hooks/useAdmin";
 import useInstructor from "../../hooks/useInstructor";
 
 const ClassesCard = ({ item }) => {
-    const { _id, name, img, price, instructor_name, available_seats } = item;
+    const { _id, name, image, price, instructor_name, available_seats } = item;
     const { user } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
@@ -16,7 +16,7 @@ const ClassesCard = ({ item }) => {
 
     const handleAddToCart = () => {
         if(user) {
-            const cartProgram = { programId: _id, name, img, price, email: user.email } 
+            const cartProgram = { programId: _id, name, image, price, email: user.email } 
             fetch('http://localhost:5000/carts', {
                 method: 'POST',
                 headers: {
@@ -49,7 +49,7 @@ const ClassesCard = ({ item }) => {
 
     return (
         <div className={`${available_seats <= 0 ? "bg-red-700 text-white" : ""} card card-compact border border-inherit`}>
-        <figure><img className="h-[261px] w-full p-4" src={img} alt="class" /></figure>
+        <figure><img className="h-[261px] w-full p-4" src={image} alt="class" /></figure>
         <div className="card-body">
             <h2 className="card-title">{name}</h2>
             <div className="">

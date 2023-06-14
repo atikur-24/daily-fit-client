@@ -10,6 +10,9 @@ import SelectedClass from "../pages/Dashboard/Student/SelectedClass/selectedClas
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import PrivateRoute from "./PrivateRoute";
 import Instructors from "../pages/Instructors/Instructor";
+import AddClass from "../pages/Dashboard/Instructor/AddClass/AddClass";
+import InstructorRoute from "./InstructorRoute";
+import MyAllClass from "../pages/Dashboard/Instructor/MyAllClass/MyAllClass";
 
 const routers = createBrowserRouter([
     {
@@ -48,13 +51,17 @@ const routers = createBrowserRouter([
                 path: 'selectedClasses',
                 element: <SelectedClass />
             },
-            // {
-            //     path: 'adminHome',
-            //     element: <DashboardHome />
-            // },
             {
                 path: 'manageUsers',
                 element: <ManageUser />
+            },
+            {
+                path: 'addClasses',
+                element: <InstructorRoute> <AddClass /> </InstructorRoute>
+            },
+            {
+                path: 'myClasses',
+                element: <InstructorRoute> <MyAllClass /> </InstructorRoute>
             }
         ] 
     }

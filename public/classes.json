@@ -1,0 +1,56 @@
+[
+    {
+      "name": "Power Sculpt",
+      "img": "power-sculpt.jpg",
+      "price": 649,
+      "students": 15,
+      "available_seats": 20,
+      "instructor_name": "John Smith",
+      "desc": "Build Strength and Define Your Muscles in this dynamic Power Sculpt class."
+    },
+    {
+      "name": "Cardio Blast",
+      "img": "cardio-blast.jpg",
+      "price": 20,
+      "students": 20,
+      "available_seats": 20,
+      "instructor_name": "Emily Johnson",
+      "desc": "Experience High-Intensity Cardiovascular Conditioning in our Cardio Blast class."
+    },
+    {
+      "name": "Yoga Fusion",
+      "img": "yoga-fusion.jpg",
+      "price": 18,
+      "students": 12,
+      "available_seats": 20,
+      "instructor_name": "Mike Davis",
+      "desc": "Discover the perfect blend of Yoga, Pilates, and Mind-Body Connection in Yoga Fusion."
+    },
+    {
+      "name": "Crossfit Workout",
+      "img": "https://img.freepik.com/free-photo/close-up-man-doing-crossfit-workout_23-2149080468.jpg?t=st=1686547521~exp=1686548121~hmac=bbf8959f7cfc0e1501641c1a6b513be4f5c501051537a1390d49d4fb4cc4d831",
+      "price": 30,
+      "students": 25,
+      "available_seats": 20,
+      "instructor_name": "Mass Thompson",
+      "desc": "Ignite your fat burning with High-Intensity Interval Training in the Crossfit Workout class."
+    },
+    {
+      "name": "Spin & Tone",
+      "img": "spin-tone.jpg",
+      "price": 15,
+      "students": 18,
+      "available_seats": 20,
+      "instructor_name": "David Wilson",
+      "desc": "Get energized with Spin Cycling and Upper Body Strength Training in the Spin & Tone class."
+    },
+    {
+      "name": "Progression Challenge",
+      "img": "bootcamp-challenge.jpg",
+      "price": 22,
+      "students": 16,
+      "available_seats": 20,
+      "instructor_name": "Mike Davis",
+      "desc": "Conquer the Progression Challenge and achieve total body conditioning through dynamic workouts."
+    }
+]

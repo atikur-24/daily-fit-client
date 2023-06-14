@@ -16,7 +16,7 @@ const Navbar = () => {
     {user && <li><NavLink className={({ isActive }) => (isActive ? "active" : "default")} to='/dashboard/selectedClasses'>Dashboard </NavLink></li>}
     </>
   return (
-    <div className="navbar z-10 fixed text-white lg:mt-4 lg:ml-20">
+    <div className="navbar z-10 fixed lg:mt-4 lg:ml-20">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
