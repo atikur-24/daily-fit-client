@@ -24,13 +24,14 @@ const ManageClasses = () => {
          })
     }
 
-    const handleDeny = program => {
+    // TODO
+    // const handleDeny = program => {
 
-    }
+    // }
+    // TODO
+    // const handleSendFeedback = program => {
 
-    const handleSendFeedback = program => {
-
-    }
+    // }
 
     return (
         <section className="mb-10">
@@ -43,7 +44,7 @@ const ManageClasses = () => {
                     <thead className="bg-slate-500 text-white">
                         <tr>
                         <th>Image</th>
-                        <th>name</th>
+                        <th>Name</th>
                         <th>Instructor Name</th>
                         <th>Instructor Email</th>
                         <th>Available Seats</th>
@@ -70,8 +71,8 @@ const ManageClasses = () => {
                             <td className={program.status === "approved" ? "text-green-600 font-bold" : " text-orange-600 font-bold"}>{program.status}</td>
                             <td className="space-y-3">
                                 <button disabled={program.status === "approved"} onClick={ () => handleApproved(program) } className="btn btn-xs btn-success">Approved</button> <br />
-                                <button disabled={program.status === "approved"} onClick={ () => handleDeny(program) } className="btn btn-xs btn-error">Deny</button> <br />
-                                <button onClick={ () => handleSendFeedback(program) } className="btn btn-xs btn-neutral">Feedback</button>
+                                <button disabled={program.status === "approved"} className="btn btn-xs btn-error">Deny</button> <br />
+                                <button className="btn btn-xs btn-neutral">Feedback</button>
                             </td>
                         </tr>
                         ))}

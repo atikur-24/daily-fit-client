@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 import useCart from "../../../../hooks/useCart";
 import SectionTitle from "../../../../components/SectionTitle";
 import { HiTrash } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 const SelectedClass = () => {
     const [ cart, refetch ] = useCart();
@@ -42,13 +43,13 @@ const SelectedClass = () => {
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     {/* head */}
-                    <thead>
+                    <thead className="bg-slate-500 text-white">
                     <tr>
-                        <th>SL</th>
-                        <th>class image</th>
-                        <th>class name</th>
-                        <th>price</th>
-                        <th>actions</th>
+                        <th>SL No.</th>
+                        <th>Class image</th>
+                        <th>Class name</th>
+                        <th>Price</th>
+                        <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -65,9 +66,9 @@ const SelectedClass = () => {
                             </div>
                         </td>
                         <td>{program.name}</td>
-                        <td className="">${program.price}</td>
+                        <td className="font-bold">${program.price}</td>
                         <td>
-                            <button onClick={ () => handleDelete(program._id)} className="btn btn-accent mr-3"> pay</button>
+                            <Link to='/dashboard/payment' className="btn btn-accent mr-3"> pay</Link>
                             <button onClick={ () => handleDelete(program._id)} className="btn btn-error"> <HiTrash /> </button>
                         </td>
                     </tr>)
