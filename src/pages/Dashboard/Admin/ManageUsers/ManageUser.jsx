@@ -87,9 +87,9 @@ const ManageUser = () => {
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     {/* head */}
-                    <thead>
+                    <thead className="bg-slate-500 text-white">
                         <tr>
-                        <th></th>
+                        <th>#</th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Role</th>
@@ -102,7 +102,7 @@ const ManageUser = () => {
                             <td>{idx + 1}</td>
                             <td>{user.name}</td>
                             <td>{user.email}</td>
-                            <td className="space-y-2">
+                            <td className="space-y-3">
                                 <button disabled={user?.role === 'admin'} onClick={ () => handleMakeAdmin(user) } className="btn btn-xs btn-neutral">Make Admin</button> <br />
                                 <button disabled={user?.role === 'instructor'} onClick={ () => handleMakeInstructor(user) } className="btn btn-xs btn-neutral">Make Instructor</button>
                             </td>

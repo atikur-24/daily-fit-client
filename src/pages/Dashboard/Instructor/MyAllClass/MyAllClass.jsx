@@ -18,7 +18,6 @@ const MyAllClass = () => {
         }
     })
 
-    console.log(classes);
 
     const handleDelete = id => {
         Swal.fire({
@@ -59,7 +58,7 @@ const MyAllClass = () => {
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     {/* head */}
-                    <thead>
+                    <thead className="bg-[#003a70] text-white">
                         <tr>
                         <th>#</th>
                         <th>Name</th>
@@ -83,7 +82,7 @@ const MyAllClass = () => {
                                 </div>
                             </td>
                             <td>0</td>
-                            <td>{program.status}</td>
+                            <td className={program.status === "approved" ? "text-green-600 font-bold" : " text-orange-600 font-bold"}>{program.status}</td>
                             <td>
                                 <button className="btn btn-accent"><HiOutlinePencilAlt /></button>
                                 <button onClick={ () => handleDelete(program._id)} className="btn btn-error ml-3"><HiTrash /> </button>
