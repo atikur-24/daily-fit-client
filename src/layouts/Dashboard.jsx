@@ -33,16 +33,16 @@ const Dashboard = () => {
                     { isInstructor &&
                         <>
                         <li><NavLink to='/dashboard/instructorHome'><HiHome />Instructor Home</NavLink></li>
-                        <li><NavLink to='/dashboard/selectedClasses'><HiFolderAdd/> Add Class</NavLink></li>
-                        <li><NavLink to='/dashboard/enrolledClasses'><HiFolderOpen /> My Classes</NavLink></li>
+                        <li><NavLink to='/dashboard/addClasses'><HiFolderAdd/> Add Class</NavLink></li>
+                        <li><NavLink to='/dashboard/myClasses'><HiFolderOpen /> My Classes</NavLink></li>
                         </>
                     }
                         
                     { !isAdmin && !isInstructor && 
                         <>
                         <li><NavLink to='/dashboard/studentHome'><HiHome /> Student Home</NavLink></li>
-                        <li><NavLink to='/dashboard/userHome'><HiBookmark/> My Selected Classes</NavLink></li>
-                        <li><NavLink to='/dashboard/reservation'><HiBadgeCheck /> My Enrolled Classes</NavLink></li>
+                        <li><NavLink to='/dashboard/selectedClasses'><HiBookmark/> My Selected Classes</NavLink></li>
+                        <li><NavLink to='/dashboard/enrolledClasses'><HiBadgeCheck /> My Enrolled Classes</NavLink></li>
                         </>
                     }
 
