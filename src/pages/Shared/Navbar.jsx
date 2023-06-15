@@ -1,9 +1,21 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from '/white-1.svg'
 import useAuth from "../../hooks/useAuth";
+import useAdmin from "../../hooks/useAdmin";
+import useInstructor from "../../hooks/useInstructor";
 
 const Navbar = () => {
   const { user, logout } = useAuth();
+  const [ isAdmin ] = useAdmin();
+  const [ isInstructor ] = useInstructor();
+
+  let dashboardLink = '/dashboard/studentHome';
+
+  if (isAdmin) {
+    dashboardLink = '/dashboard/adminHome';
+  } else if (isInstructor) {
+    dashboardLink = '/dashboard/instructorHome';
+  }
 
   const handleLogout = () => {
     logout().then(()=>{}).catch(error=>console.error(error))
@@ -13,7 +25,7 @@ const Navbar = () => {
     <li><NavLink className={({ isActive }) => (isActive ? "active" : "default")} to='/'>Home</NavLink></li>
     <li><NavLink className={({ isActive }) => (isActive ? "active" : "default")} to='/classes'>Classes</NavLink></li>
     <li><NavLink className={({ isActive }) => (isActive ? "active" : "default")} to='/instructors'>Instructors</NavLink></li>
-    {user && <li><NavLink className={({ isActive }) => (isActive ? "active" : "default")} to='/dashboard/selectedClasses'>Dashboard </NavLink></li>}
+    {user && <li><NavLink className={({ isActive }) => (isActive ? "active" : "default")} to={dashboardLink}>Dashboard </NavLink></li>}
     </>
   return (
     <div className="navbar z-10 fixed lg:mt-4 lg:ml-20">

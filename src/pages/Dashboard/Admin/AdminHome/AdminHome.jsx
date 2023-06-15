@@ -1,9 +1,14 @@
+import AnimatedSlider from "../../../../components/AnimatedSlider";
+import SectionTitle from "../../../../components/SectionTitle";
 
 const AdminHome = () => {
     return (
-        <div>
-            Admin home page 
-        </div>
+        <section>
+            <div className="my-5">
+                <SectionTitle heading="Admin Home Dashboard" subHeading="super power" />
+            </div>
+            <AnimatedSlider />
+        </section>
     );
 };
 

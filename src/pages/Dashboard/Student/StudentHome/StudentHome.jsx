@@ -1,9 +1,14 @@
+import AnimatedSlider from "../../../../components/AnimatedSlider";
+import SectionTitle from "../../../../components/SectionTitle";
 
 const StudentHome = () => {
     return (
-        <div>
-            Student Home Page
-        </div>
+        <section>
+            <div className="my-5">
+                <SectionTitle heading="Student Home Dashboard" subHeading="Empower Your Fitness Journey" />
+            </div>
+            <AnimatedSlider />
+        </section>
     );
 };
 
