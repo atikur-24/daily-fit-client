@@ -1,11 +1,25 @@
-## Daily Fit ##
-* Home page show carucel banner
-* Home page show toys gallery , category and client feedback
-* show a navbar and show a footer page
-* When user is click all toy menu then show all toys in tabular formate
-* user click detail button to redirect login page than
-* my toys menu show a specific user add toys
-* this webise also firebase authentication
+## Daily Fit website ##
+![Daily Fit](/public/white-1.svg)
+* user see all gym classes
+* user selected classes
+* user enrolled gym classes and pay money
+* instructor add classes and manage classes 
+* admin make any user admin or instructor
+* admin manage classes (approved/denied)
+
+### Used packages/technology for front-end ###
+* react
+* react-router-dom
+* react-hook-form
+* react-helmet-async
+* tanstack/react-query
+* react-helmet-async
+* react-stripe-js
+* axios
+* firebase
+* sweetalert2
+* react-toastify
+* tailwind css etc.
 
 ## Live site Link 
-Hosted in Firebase -> [Daily Fit](https://edu-toy-emporium.web.app/)
+Hosted in Firebase -> [Daily Fit](https://daily-fit-d36ee.web.app/)

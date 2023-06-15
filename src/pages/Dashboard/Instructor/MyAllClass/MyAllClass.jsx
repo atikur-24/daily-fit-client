@@ -30,7 +30,7 @@ const MyAllClass = () => {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/users/${id}`, {
+                fetch(`http://localhost:5000/classes/${id}`, {
                     method: 'DELETE'
                 })
                 .then(res => res.json())
@@ -39,7 +39,7 @@ const MyAllClass = () => {
                         refetch();
                         Swal.fire(
                             'Deleted!',
-                            'User has been deleted.',
+                            'Class has been deleted.',
                             'success'
                           )
                     }
@@ -78,7 +78,7 @@ const MyAllClass = () => {
                                             <img src={program.image} alt="Name" />
                                         </div>
                                     </div>
-                                    <div className="font-bold">{program.name}y</div>
+                                    <div className="font-bold">{program.name}</div>
                                 </div>
                             </td>
                             <td>0</td>
