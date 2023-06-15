@@ -1,5 +1,5 @@
 ## Daily Fit website ##
-![Daily Fit](/public/white-1.svg)
+<img src="/public/white-1.svg" alt="Daily Fit" width="300" height="200">
 * user see all gym classes
 * user selected classes
 * user enrolled gym classes and pay money
