@@ -6,7 +6,6 @@ import SignUp from "../pages/SignUp/SignUp";
 import Dashboard from "../layouts/Dashboard";
 import ManageUser from "../pages/Dashboard/Admin/ManageUsers/ManageUser";
 import Classes from "../pages/Classes/Classes";
-import SelectedClass from "../pages/Dashboard/Student/SelectedClass/selectedClass";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import PrivateRoute from "./PrivateRoute";
 import Instructors from "../pages/Instructors/Instructor";
@@ -19,6 +18,9 @@ import AdminRoute from "./AdminRoute";
 import AdminHome from "../pages/Dashboard/Admin/AdminHome/AdminHome";
 import InstructorHome from "../pages/Dashboard/Instructor/InstructorHome/InstructorHome";
 import StudentHome from "../pages/Dashboard/Student/StudentHome/StudentHome";
+import EnrolledClasses from "../pages/Dashboard/Student/EnrolledClasses/EnrolledClasses";
+import SelectedClass from "../pages/Dashboard/Student/SelectedClass/SelectedClass";
+import PaymentHistory from "../pages/Dashboard/Student/Payment/PaymentHistory";
 
 const routers = createBrowserRouter([
     {
@@ -86,8 +88,16 @@ const routers = createBrowserRouter([
                 element: <SelectedClass />
             },
             {
+                path: 'enrolledClasses',
+                element: <EnrolledClasses />
+            },
+            {
                 path: 'payment',
                 element: <Payment />
+            },
+            {
+                path: 'paymentHistory',
+                element: <PaymentHistory />
             },
         ] 
     }

@@ -3,9 +3,15 @@ import useCart from "../../../../hooks/useCart";
 import SectionTitle from "../../../../components/SectionTitle";
 import { HiTrash } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import useAuth from "../../../../hooks/useAuth";
 
 const SelectedClass = () => {
     const [ cart, refetch ] = useCart();
+    const { paymentClass } = useAuth();
+
+    const handlePayment = program => {
+        paymentClass(program)
+    }
     
     const handleDelete = id => {
         Swal.fire({
@@ -59,8 +65,8 @@ const SelectedClass = () => {
                         <td>
                             <div className="flex programs-center space-x-3">
                                 <div className="avatar">
-                                <div className="mask mask-squircle w-16  h-1w-16 ">
-                                    <img src={program.img} alt="class" />
+                                <div className="mask mask-squircle w-16  h-16 ">
+                                    <img src={program.image} alt="class" />
                                 </div>
                                 </div>
                             </div>
@@ -68,7 +74,9 @@ const SelectedClass = () => {
                         <td>{program.name}</td>
                         <td className="font-bold">${program.price}</td>
                         <td>
-                            <Link to='/dashboard/payment' className="btn btn-accent mr-3"> pay</Link>
+                            <button onClick={ () => handlePayment(program) } className="btn btn-accent mr-3">
+                                <Link to='/dashboard/payment'> pay</Link>
+                            </button>
                             <button onClick={ () => handleDelete(program._id)} className="btn btn-error"> <HiTrash /> </button>
                         </td>
                     </tr>)

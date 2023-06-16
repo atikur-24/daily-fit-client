@@ -10,6 +10,7 @@ const googleProvider = new GoogleAuthProvider()
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [program, setProgram] = useState([]);
 
     const signUp = (email, password) => {
         setLoading(true);
@@ -61,6 +62,12 @@ const AuthProvider = ({ children }) => {
         }
     }, [])
 
+    // revived class data and pass
+    const paymentClass = (program) => {
+        // setLoading(true)
+        return setProgram(program)
+    }
+
     const authInfo = {
         signUp,
         updateUserProfile,
@@ -68,7 +75,9 @@ const AuthProvider = ({ children }) => {
         googleSignIn,
         logout,
         user,
-        loading
+        loading,
+        paymentClass,
+        program
     } 
     return (
         <AuthContext.Provider value={ authInfo }>

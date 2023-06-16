@@ -4,16 +4,19 @@ import useAuth from "../../../../hooks/useAuth";
 import { } from "react-icons/hi";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
+import { useState } from "react";
 
 const img_hosting_token = import.meta.env.VITE_IMAGE_UPLOAD_TOKEN;
 
 const AddClass = () => {
     const { user } = useAuth();
+    const [loading, setLoading] = useState(false);
     const { register, handleSubmit, reset, formState: { errors }, } = useForm();
     const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
     const [ axiosSecure ] = useAxiosSecure();
 
     const onSubmit = (data) => {
+        setLoading(true)
         const formData = new FormData();
         formData.append('image', data.image[0])
 
@@ -30,6 +33,7 @@ const AddClass = () => {
                     axiosSecure.post('/classes', newClass)
                     .then(data => {
                         if(data.data.insertedId){
+                            setLoading(false);
                             reset();
                             Swal.fire({
                                 position: 'top-end',
@@ -48,7 +52,7 @@ const AddClass = () => {
         <section className="">
             <div className="my-5">
                 <SectionTitle heading="Add A Class" subHeading="What's New" />
-            </div>
+            </div>    
             <div>
                 <form onSubmit={handleSubmit(onSubmit)} className="card-body bg-base-200 rounded-lg p-20">
                     <div className="space-y-5">
@@ -108,6 +112,9 @@ const AddClass = () => {
                         </label>
                         <textarea {...register("description", { required: true })} className="textarea textarea-bordered h-28 resize-none" placeholder="Detail description" ></textarea>
                         {errors.description && <span className="text-red-600" >Description field is required</span>}
+                    </div>
+                    <div className="flex justify-center gap-2">
+                        {loading && <><span>Please Wait</span><span className="loading loading-dots loading-sm mt-2"></span></>}
                     </div>
                     <div className="form-control mt-6">
                         <input className="my-btn" type="submit" value="Add A Class" />

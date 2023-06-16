@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { HiBadgeCheck, HiBookmark, HiClipboardList, HiFolderAdd, HiFolderOpen, HiHome, HiUserGroup } from "react-icons/hi";
+import { HiBadgeCheck, HiBookmark, HiClipboardList, HiCreditCard, HiFolderAdd, HiFolderOpen, HiHome, HiUserGroup } from "react-icons/hi";
 import useAdmin from "../hooks/useAdmin";
 import useInstructor from "../hooks/useInstructor";
 
@@ -43,6 +43,7 @@ const Dashboard = () => {
                         <li><NavLink to='/dashboard/studentHome'><HiHome /> Student Home</NavLink></li>
                         <li><NavLink to='/dashboard/selectedClasses'><HiBookmark/> My Selected Classes</NavLink></li>
                         <li><NavLink to='/dashboard/enrolledClasses'><HiBadgeCheck /> My Enrolled Classes</NavLink></li>
+                        <li><NavLink to='/dashboard/paymentHistory'><HiCreditCard /> Payment History</NavLink></li>
                         </>
                     }
 

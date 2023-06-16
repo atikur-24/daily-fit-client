@@ -1,7 +1,7 @@
 import { HiOutlineUserGroup } from "react-icons/hi";
 
 const PopularClassesCard = ({item}) => {
-    const {name, image, description, price} = item;
+    const { name, image, description, price, enrolled_students } = item;
 
     return (
         <div className="card bg-base-100 shadow-xl">
@@ -11,7 +11,7 @@ const PopularClassesCard = ({item}) => {
                 <p>{description}</p>
                 <div className="card-actions justify-between mt-3">
                     <div className="badge badge-secondary badge-outline font-medium lg:p-3">${price}</div>
-                    <div className="badge badge-outline font-medium lg:p-3"><HiOutlineUserGroup className="mr-2" /> 00</div>
+                    <div className="badge badge-outline font-medium lg:p-3"><HiOutlineUserGroup className="mr-2" />{enrolled_students}</div>
                 </div>
             </div>
         </div>
