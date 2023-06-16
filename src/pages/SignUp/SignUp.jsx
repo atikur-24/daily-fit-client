@@ -20,7 +20,7 @@ const SignUp = () => {
          .then(() => {
             updateUserProfile(data.name, data.photoURL)
             const saveUser = { email: data.email, name: data.name, img: data.photoURL, role: 'student' };
-            fetch('http://localhost:5000/users', {
+            fetch('https://daily-fit-server.vercel.app/users', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

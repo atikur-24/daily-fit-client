@@ -31,7 +31,7 @@ const MyAllClass = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/classes/${id}`, {
+        fetch(`https://daily-fit-server.vercel.app/classes/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -81,7 +81,7 @@ const MyAllClass = () => {
                                 <button className="btn btn-accent"><HiOutlinePencilAlt /></button>
                                 <button onClick={ () => handleDelete(program._id)} className="btn btn-error ml-3"><HiTrash /> </button>
                             </td>
-                            {program.status === "denied" && <td>{program?.feedback}</td>}
+                            <td>{program?.feedback}</td>
                         </tr>
                         ))}
                     </tbody>

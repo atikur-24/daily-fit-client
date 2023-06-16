@@ -8,7 +8,7 @@ const Instructors = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect( () => {
-        fetch('http://localhost:5000/users/instructor')
+        fetch('https://daily-fit-server.vercel.app/users/instructor')
          .then(res => res.json())
          .then(data => {
             setInstructors(data)

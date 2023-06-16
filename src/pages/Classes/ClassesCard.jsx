@@ -17,7 +17,7 @@ const ClassesCard = ({ item }) => {
     const handleAddToCart = () => {
         if(user) {
             const cartProgram = { programId: _id, name, image, price, email: user.email } 
-            fetch('http://localhost:5000/carts', {
+            fetch('https://daily-fit-server.vercel.app/carts', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

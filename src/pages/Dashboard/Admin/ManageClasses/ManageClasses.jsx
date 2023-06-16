@@ -8,7 +8,7 @@ const ManageClasses = () => {
     const [ classes, refetch ] = useClasses();
 
     const handleApproved = program => {
-        fetch(`http://localhost:5000/classes/approved/${program._id}`, {
+        fetch(`https://daily-fit-server.vercel.app/classes/approved/${program._id}`, {
             method: 'PATCH',
         })
          .then(res => res.json())
@@ -27,7 +27,7 @@ const ManageClasses = () => {
     }
 
     const handleDenied = program => {
-        fetch(`http://localhost:5000/classes/denied/${program._id}`, {
+        fetch(`https://daily-fit-server.vercel.app/classes/denied/${program._id}`, {
             method: 'PATCH',
         })
          .then(res => res.json())
@@ -57,7 +57,7 @@ const ManageClasses = () => {
             showLoaderOnConfirm: true,
             preConfirm: (feedback) => {
                 const comment = { message: feedback }
-                fetch(`http://localhost:5000/classes/${id}`, {
+                fetch(`https://daily-fit-server.vercel.app/classes/${id}`, {
                     method: 'PUT',
                     headers: {
                         'content-type': 'application/json'

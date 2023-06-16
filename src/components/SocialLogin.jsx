@@ -14,7 +14,7 @@ const SocialLogin = () => {
             .then(result => {
                 const loggedUser = result.user;
                 const saveUser = { email: loggedUser.email, name: loggedUser.displayName, img: loggedUser.photoURL, role: 'student' };
-                fetch('http://localhost:5000/users', {
+                fetch('https://daily-fit-server.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

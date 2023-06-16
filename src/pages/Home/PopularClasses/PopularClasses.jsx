@@ -8,10 +8,10 @@ const PopularClasses = () => {
     const [spinner, setSpinner] = useState(true);
 
     useEffect( () => {
-        fetch('http://localhost:5000/classes/approved')
+        fetch('https://daily-fit-server.vercel.app/classes/approved')
          .then(res => res.json())
          .then(data => {
-            setClasses(data);
+            setClasses(data.slice(0, 6));
             setSpinner(false);
         })
     }, [])

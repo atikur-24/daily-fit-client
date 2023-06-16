@@ -45,7 +45,7 @@ const AuthProvider = ({ children }) => {
             setUser(currentUser)
             // set and get token
             if(currentUser) {
-                axios.post('http://localhost:5000/jwt', { email: currentUser.email })
+                axios.post('https://daily-fit-server.vercel.app/jwt', { email: currentUser.email })
                   .then(res => {
                     const token = res.data;
                     localStorage.setItem('access-token', token);

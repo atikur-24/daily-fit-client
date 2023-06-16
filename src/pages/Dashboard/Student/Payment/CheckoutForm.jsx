@@ -11,7 +11,6 @@ const CheckoutForm = ({ cartProgram }) => {
 
     const [clientSecret, setClientSecret] = useState('');
     const [cardError, setCardError] = useState('');
-    const [success, setSuccess] = useState('');
     const [processing, setProcessing] = useState(false);
     const navigate = useNavigate();
 
@@ -77,9 +76,6 @@ const CheckoutForm = ({ cartProgram }) => {
 
         if(paymentIntent.status === "succeeded") {
             const transactionId = paymentIntent.id;
-            const message = `Your payment Successfully! your TransactionId: ${transactionId}`;
-            setSuccess(message);
-
             // save payment information to the server
             const payment = {
                 ...cartProgram,
@@ -126,7 +122,6 @@ const CheckoutForm = ({ cartProgram }) => {
                 <button disabled={ !stripe || !clientSecret || processing } type="submit" className="btn btn-block mt-10 btn-primary btn-sm">$ Pay</button>
             </form>
             { cardError && <p className="text-red-600 text-center">{cardError}</p>}
-            { success && <p className="text-green-600 text-center">{success}</p>}
         </section>
     );
 };
