@@ -6,7 +6,8 @@
 3. user enrolled gym classes and pay money <br>
 4. instructor add classes and manage classes <br>
 5. admin make any user admin or instructor <br>
-6. admin manage classes (approved/denied) 
+6. admin manage classes (approved/denied) <br>
+7. integration payment system with stripe
 
 ### Used packages/technology for front-end ###
 * react
@@ -21,6 +22,7 @@
 * sweetalert2
 * react-toastify
 * tailwind css etc.
+* stripe
 
 ## Live site Link 
 Hosted in Firebase -> [Daily Fit](https://daily-fit-d36ee.web.app/)
