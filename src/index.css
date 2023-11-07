@@ -3,35 +3,34 @@
 @tailwind utilities;
 
 :root {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
-/* .my-txt-color {
-  color: #160041;
-} */
-
-.my-container{
-  @apply px-4 md:px-24 lg:px-8 py-16 lg:py-24 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl
+.my-txt-color {
+  color: #f34e3a;
 }
 
-.my-btn{
-  @apply cursor-pointer bg-[#f34e3a] hover:bg-[#E24836] rounded-md px-3 py-2 md:px-6 md:py-4 text-[18px] font-medium md:font-semibold text-white transition duration-200
+.my-container {
+  @apply px-4 md:px-24 lg:px-8 py-16 lg:py-24 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl;
 }
-.my-btn-outline{
-  @apply hover:bg-[#f34e3a] hover:text-white rounded-lg px-3 py-2 md:px-6 md:py-4 text-[18px] font-medium md:font-semibold transition duration-300 border border-[#f34e3a] text-[#f34e3a]
+
+.my-btn {
+  @apply cursor-pointer bg-[#f34e3a] hover:bg-[#E24836] rounded-md px-3 py-2 md:px-6 md:py-4 text-[18px] font-medium md:font-semibold text-white transition duration-200;
+}
+.my-btn-outline {
+  @apply hover:bg-[#f34e3a] hover:text-white rounded-lg px-3 py-2 md:px-6 md:py-4 text-[18px] font-medium md:font-semibold transition duration-300 border border-[#f34e3a] text-[#f34e3a];
 }
 
 /* .social-btn{
   @apply cursor-pointer bg-[#F5F5F8] hover:bg-[#efeff0] gap-5 rounded-md px-3 py-2 md:px-6 md:py-4 text-[18px] font-bold md:font-semibold transition duration-200 inline-flex justify-center w-full
 } */
 
-
 .active {
-  @apply font-medium tracking-wide text-white border-b-2 border-red-600 transition-colors duration-200
+  @apply font-medium tracking-wide text-white border-b-2 border-red-600 transition-colors duration-200;
 }
 
 .default {
-  @apply font-medium tracking-wide text-white hover:text-white transition-colors duration-200
+  @apply font-medium tracking-wide text-white hover:text-white transition-colors duration-200;
 }
 
 .spinner {
